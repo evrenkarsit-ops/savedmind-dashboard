@@ -128,7 +128,7 @@ export default function Home() {
                 {/* Nav items */}
                 {[
                   { name: "Home", active: true, icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> },
-                  { name: "My Saves", active: false, icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg> },
+                  { name: "Xplorer", active: false, icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg> },
                   { name: "Focus Mode", active: false, icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> },
                   { name: "Daily Quiz", active: false, icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg> },
                   { name: "My Resources", active: false, icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg> },
@@ -183,10 +183,10 @@ export default function Home() {
               <div className="flex items-end relative shrink-0">
                 <div className="flex flex-col gap-[10px] items-start relative shrink-0">
                   <p className="font-mono font-bold leading-[32px] relative shrink-0 text-[18px] md:text-[20px] text-white tracking-[-0.4px]">
-                    Work with your relevant tweets
+                    Try Work Mode
                   </p>
                   <p className="font-sans font-semibold leading-[20px] not-italic relative shrink-0 text-[14px] md:text-[16px] text-[rgba(255,255,255,0.6)]">
-                    Uses your saved tweets to support what you're working on.
+                    Use your saves while work.
                   </p>
                 </div>
               </div>
@@ -200,7 +200,7 @@ export default function Home() {
                 />
                 <button className="bg-[#1f1f1f] flex flex-col h-[42px] items-center justify-center px-[10px] relative rounded-[5px] shrink-0 cursor-pointer hover:bg-[#333] transition-colors active:scale-95">
                   <p className="font-mono font-bold leading-[24px] relative shrink-0 text-[14px] text-white whitespace-nowrap">
-                    Start Focus
+                    START FOCUS
                   </p>
                 </button>
               </div>
@@ -217,9 +217,9 @@ export default function Home() {
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-[10px] w-full">
                 {[
                   { label: "TOTAL SAVES", value: "1.201", emoji: "📚" },
-                  { label: "QUIZZES DONE", value: "156", emoji: "🔥" },
+                  { label: "QUIZZES DONE", value: "156", emoji: "🍎" },
                   { label: "FOCUS HOURS", value: "89", emoji: "🎯" },
-                  { label: "XP EARNED", value: "8,470", emoji: "🏆" },
+                  { label: "XP EARNED", value: "8,470", emoji: "🔮" },
                   { label: "EVOLUTIONS", value: "4", emoji: "🌈" },
                   { label: "DISCOVERIES", value: "47", emoji: "💎" },
                 ].map((stat) => (
@@ -237,76 +237,68 @@ export default function Home() {
                 ))}
               </div>
 
-              {/* Feature cards row - Streak, Quiz, Placeholder */}
+              {/* Feature cards row - Streak, Quiz, DNA */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-[10px] w-full">
                 {/* Current Streak */}
                 <div className="bg-[#f30] border-[#f0f0f0] border-solid border-t flex flex-col h-[175px] items-start justify-between overflow-hidden p-[16px] relative rounded-[8px]">
                   <div className="flex flex-col gap-[16px] items-start relative shrink-0">
-                    <p className="font-mono font-semibold leading-[24px] relative shrink-0 text-[#b62b08] text-[14px] uppercase">
-                      CURRENT STREAK
-                    </p>
-                    <p className="font-mono font-bold leading-[0] relative shrink-0 text-[32px] text-white tracking-[-1.92px]">
-                      <span className="leading-[32px]">{`20 `}</span>
-                      <span className="leading-[32px] text-[#b62b08]">Days</span>
+                    <p className="font-mono font-bold leading-[0] relative shrink-0 text-[38px] text-white tracking-[-2.28px]">
+                      <span className="leading-[36px]">20</span>
+                      <span className="leading-[36px] text-[#b62b08]">-</span>
+                      <span className="leading-[36px] text-[#b62b08]">Days<br/>Streak!</span>
                     </p>
                   </div>
-                  {/* Orange illustration - right side */}
                   <img
                     alt=""
-                    src="/assets/orange-right.png"
-                    className="absolute right-0 top-0 h-full w-auto object-contain object-right pointer-events-none"
+                    src="/assets/dog-burn-sticker.png"
+                    className="absolute right-[-20px] top-[-30px] w-[255px] h-[254px] object-contain pointer-events-none rotate-[-8deg]"
                   />
-                  <div className="flex gap-[8px] items-start relative shrink-0">
-                    {["Su", "MO", "TU", "WE", "TH", "FR", "Su"].map((day, i) => (
-                      <div key={i} className="flex flex-col gap-[8px] items-center relative shrink-0 w-[32px] cursor-pointer">
-                        <div className={`${[0,1,6].includes(i) ? 'bg-[#f9990e]' : i === 2 ? 'bg-[#ba2d0a]' : 'bg-[#db350b]'} overflow-clip relative rounded-[87.5px] shrink-0 size-[28px] hover:scale-110 transition-transform`}>
-                          {[0,1,6].includes(i) && (
-                            <div className="-translate-x-1/2 -translate-y-1/2 absolute left-1/2 overflow-clip size-[14px] top-1/2">
-                              <div className="absolute inset-[16.67%_12.5%]">
-                                <div className="absolute inset-[-14.06%_-12.5%]">
-                                  <img alt="" className="block max-w-none size-full" src={img} />
-                                </div>
-                              </div>
-                            </div>
-                          )}
-                          {i === 2 && (
-                            <div className="-translate-x-1/2 -translate-y-1/2 absolute bg-white left-1/2 rounded-[100px] size-[18px] top-1/2" />
-                          )}
-                        </div>
-                        <p className={`font-mono font-semibold leading-[24px] min-w-full relative shrink-0 text-[14px] ${i === 2 ? 'text-white' : 'text-[rgba(255,255,255,0.5)]'} text-center uppercase`}>
-                          {day}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
+                  <p className="font-mono font-bold leading-[16px] relative shrink-0 text-[#b62b08] text-[17px] tracking-[-1px] z-10">
+                    1/7 days of this week
+                  </p>
                 </div>
 
                 {/* Daily Quiz */}
                 <div className="bg-[#084641] border-[#f0f0f0] border-solid border-t flex flex-col h-[175px] items-start justify-between overflow-clip p-[16px] relative rounded-[8px] cursor-pointer hover:brightness-110 transition-all">
                   <div className="flex flex-col items-start relative shrink-0 z-10">
-                    <p className="font-mono font-bold leading-[0] relative shrink-0 text-[32px] text-white tracking-[-1.92px] whitespace-pre-wrap">
-                      <span className="leading-[32px] text-[rgba(255,255,255,0.5)]">{`Daily `}</span>
-                      <span className="leading-[32px]">Quiz</span>
+                    <p className="font-mono font-bold leading-[0] relative shrink-0 text-[38px] text-white tracking-[-2.28px] whitespace-pre-wrap">
+                      <span className="leading-[36px] text-[rgba(255,255,255,0.5)]">{`Daily `}</span>
+                      <span className="leading-[36px]">Quiz</span>
                     </p>
                   </div>
-                  {/* Green illustration - right side */}
-                  <img
-                    alt=""
-                    src="/assets/green-right.png"
-                    className="absolute right-0 top-0 h-full w-auto object-contain object-right pointer-events-none"
-                  />
-                  <button className="backdrop-blur-[11px] bg-[rgba(255,255,255,0.2)] flex items-center justify-between px-[12px] py-[8px] relative rounded-[8px] shrink-0 w-full z-10 hover:bg-[rgba(255,255,255,0.3)] transition-colors active:scale-[0.98]">
+                  <div className="absolute bottom-0 right-0 top-0 w-[119px] pointer-events-none">
+                    <img
+                      alt=""
+                      src="/assets/thinking-sticker.png"
+                      className="absolute inset-[-6%_-41%_-45%_-81%] max-w-none object-cover"
+                    />
+                  </div>
+                  <button className="backdrop-blur-[11px] bg-[rgba(255,255,255,0.2)] flex gap-[4px] items-center justify-center px-[16px] py-[8px] relative rounded-[8px] shrink-0 z-10 hover:bg-[rgba(255,255,255,0.3)] transition-colors active:scale-[0.98]">
                     <p className="font-mono font-bold leading-[24px] relative shrink-0 text-[14px] text-white uppercase">
                       Start Quiz
                     </p>
-                    <div className="relative shrink-0 size-[24px] flex items-center justify-center">
-                      <span className="text-white text-[16px]">􀈉</span>
-                    </div>
                   </button>
                 </div>
 
-                {/* Purple Placeholder */}
-                <div className="bg-[#bba9ff] border-[#f0f0f0] border-solid border-t h-[175px] rounded-[8px]">
+                {/* Your DNA */}
+                <div className="bg-[#1f1f1f] border-[#f0f0f0] border-solid border-t flex flex-col h-[175px] items-start justify-between overflow-clip p-[16px] relative rounded-[8px] cursor-pointer hover:brightness-110 transition-all">
+                  <div className="font-mono font-bold leading-[0] relative shrink-0 text-[#ececec] text-[38px] tracking-[-2.28px] whitespace-pre-wrap z-10">
+                    <p className="mb-0">
+                      <span className="leading-[36px] text-[rgba(255,255,255,0.5)]">Your</span>
+                      <span className="leading-[36px]">{` `}</span>
+                    </p>
+                    <p className="leading-[36px]">DNA</p>
+                  </div>
+                  <button className="backdrop-blur-[11px] bg-[rgba(255,255,255,0.1)] flex gap-[4px] items-center justify-center px-[16px] py-[8px] relative rounded-[8px] shrink-0 z-10 hover:bg-[rgba(255,255,255,0.2)] transition-colors active:scale-[0.98]">
+                    <p className="font-mono font-bold leading-[24px] relative shrink-0 text-[14px] text-white uppercase">
+                      View Details
+                    </p>
+                  </button>
+                  <img
+                    alt=""
+                    src="/assets/dance-sticker.png"
+                    className="absolute right-[-22px] top-1/2 -translate-y-1/2 w-[215px] h-[215px] object-contain pointer-events-none"
+                  />
                 </div>
               </div>
 
@@ -380,8 +372,8 @@ export default function Home() {
                   <div className="flex flex-col gap-[12px] items-start relative w-full">
                     {[
                       { emoji: "⬇️", title: "Download MoltBot and try the automation features", desc: "Uses your saved tweets to support what you're working on." },
-                      { emoji: "🔥", title: "Research how Stripe Atlas works for startups", desc: "Uses your saved tweets to support what you're working on." },
-                      { emoji: "🔥", title: "Try the Pomodoro technique for deep work", desc: "Uses your saved tweets to support what you're working on." },
+                      { emoji: "🔍", title: "Research how Stripe Atlas works for startups", desc: "Uses your saved tweets to support what you're working on." },
+                      { emoji: "🧪", title: "Try the Pomodoro technique for deep work", desc: "Uses your saved tweets to support what you're working on." },
                       { emoji: "▶️", title: "Watch Y Combinator startup school videos", desc: "Uses your saved tweets to support what you're working on." },
                     ].map((task, i) => (
                       <div key={i} className="bg-white flex flex-col items-start overflow-clip p-[16px] relative rounded-[8px] w-full cursor-pointer hover:bg-[#f5f5f5] transition-colors">
